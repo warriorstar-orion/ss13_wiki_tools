@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+largestinteriorrectangle = "==0.2.0"
+avulto = "==0.0.2"
+rasterio = "==1.3.9"
+shapely = "==2.0.2"
+pillow = "==10.2.0"
+click = "==8.1.7"
+opencv-python = "==4.9.0.80"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
