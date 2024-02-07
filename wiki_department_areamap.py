@@ -22,7 +22,7 @@ class MapRegion:
 
 SUPPLY_COLOR = "#ff6a00ff"
 SUPPLY_AREAS = [
-    MapRegion(p("/area/station/maintenance/disposal"), SUPPLY_COLOR, "Mining"),
+    MapRegion(p("/area/station/maintenance/disposal"), SUPPLY_COLOR, "Disposals"),
     MapRegion(p("/area/station/supply/miningdock"), SUPPLY_COLOR, "Mining"),
     MapRegion(p("/area/station/supply/office"), SUPPLY_COLOR, "Cargo"),
     MapRegion(p("/area/station/supply/qm"), SUPPLY_COLOR, "QM"),
@@ -33,13 +33,16 @@ COMMAND_COLOR = "#0094ffff"
 COMMAND_AREAS = [
     MapRegion(p("/area/station/ai_monitored/storage/eva"), COMMAND_COLOR, "EVA"),
     MapRegion(p("/area/station/command/bridge"), COMMAND_COLOR, "Bridge"),
-    MapRegion(p("/area/station/command/office/blueshield"), COMMAND_COLOR, "NT\nRep"),
+    MapRegion(p("/area/station/command/meeting_room"), COMMAND_COLOR),
+    MapRegion(p("/area/station/command/office/blueshield"), COMMAND_COLOR, "Blue."),
     MapRegion(p("/area/station/command/office/captain"), COMMAND_COLOR, "Cptn."),
     MapRegion(p("/area/station/command/office/captain/bedroom"), COMMAND_COLOR),
+    MapRegion(p("/area/station/command/office/hop"), COMMAND_COLOR, "HoP"),
     MapRegion(p("/area/station/command/office/ntrep"), COMMAND_COLOR, "NT\nRep"),
     MapRegion(p("/area/station/command/server"), COMMAND_COLOR),
     MapRegion(p("/area/station/command/teleporter"), COMMAND_COLOR),
     MapRegion(p("/area/station/command/vault"), COMMAND_COLOR, "Vlt."),
+    MapRegion(p("/area/station/turret_protected/ai_upload"), COMMAND_COLOR, "AI\nUpl."),
 ]
 
 HALLWAY_COLOR = "#fff1adff"
@@ -61,27 +64,29 @@ HALLWAY_AREAS = [
 
 ENGINEERING_COLOR = "#ffd800ff"
 ENGINEERING_AREAS = [
+    MapRegion(p("/area/station/command/office/ce"), ENGINEERING_COLOR, "CE"),
     MapRegion(p("/area/station/engineering/break_room"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/engineering/control"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/engineering/controlroom"), ENGINEERING_COLOR),
+    MapRegion(p("/area/station/engineering/equipmentstorage"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/engineering/gravitygenerator"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/engineering/hardsuitstorage"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/engineering/secure_storage"), ENGINEERING_COLOR),
+    MapRegion(p("/area/station/engineering/smes"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/engineering/tech_storage"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/maintenance/assembly_line"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/maintenance/electrical"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/public/construction"), ENGINEERING_COLOR),
-    MapRegion(p("/area/station/command/office/ce"), ENGINEERING_COLOR, "CE"),
- 
 ]
 
 ATMOS_COLOR = "#00ff90ff"
 ATMOS_AREAS = [
     MapRegion(p("/area/station/engineering/atmos"), ATMOS_COLOR),
-    MapRegion(p("/area/station/engineering/atmos/control"), ATMOS_COLOR),    
+    MapRegion(p("/area/station/engineering/atmos/control"), ATMOS_COLOR),
     MapRegion(p("/area/station/engineering/atmos/distribution"), ATMOS_COLOR),
     MapRegion(p("/area/station/engineering/atmos/distribution"), ATMOS_COLOR),
     MapRegion(p("/area/station/maintenance/turbine"), ATMOS_COLOR),
+    MapRegion(p("/area/station/maintenance/incinerator"), ATMOS_COLOR, "Incin."),
 ]
 
 MAINTS_COLOR = "#808080ff"
@@ -92,26 +97,30 @@ MAINTS_AREAS = [
     MapRegion(p("/area/station/maintenance/apmaint2"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/asmaint"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/asmaint2"), MAINTS_COLOR),
-    MapRegion(p("/area/station/maintenance/disposal"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/fore"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/fpmaint"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/fpmaint2"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/fsmaint"), MAINTS_COLOR),
-    MapRegion(p("/area/station/maintenance/incinerator"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/port"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/storage"), MAINTS_COLOR),
 ]
 
 PUBLIC_COLOR = "#bfffffff"
 PUBLIC_AREAS = [
+    MapRegion(p("/area/holodeck/alphadeck"), PUBLIC_COLOR),
     MapRegion(p("/area/station/hallway/secondary/garden"), PUBLIC_COLOR, "Grdn."),
+    MapRegion(p("/area/station/public/arcade"), PUBLIC_COLOR),
+    MapRegion(p("/area/station/public/dorms"), PUBLIC_COLOR, "Dorms"),
     MapRegion(p("/area/station/public/locker"), PUBLIC_COLOR, "Lockers"),
+    MapRegion(p("/area/station/public/mrchangs"), PUBLIC_COLOR),
+    MapRegion(p("/area/station/public/sleep"), PUBLIC_COLOR, "Cryo"),
     MapRegion(p("/area/station/public/storage/emergency/port"), PUBLIC_COLOR, "Tools"),
     MapRegion(p("/area/station/public/storage/tools"), PUBLIC_COLOR, "Tools"),
     MapRegion(p("/area/station/public/storage/tools/auxiliary"), PUBLIC_COLOR),
     MapRegion(p("/area/station/public/toilet/lockerroom"), PUBLIC_COLOR),
     MapRegion(p("/area/station/public/toilet/unisex"), PUBLIC_COLOR),
     MapRegion(p("/area/station/public/vacant_office"), PUBLIC_COLOR),
+    MapRegion(p("/area/station/service/barber"), PUBLIC_COLOR),
 ]
 
 SECURITY_COLOR = "#e20000ff"
@@ -123,12 +132,16 @@ SECURITY_AREAS = [
     MapRegion(p("/area/station/security/armory/secure"), SECURITY_COLOR, "Armory"),
     MapRegion(p("/area/station/security/brig"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/checkpoint/secondary"), SECURITY_COLOR, "Chk."),
+    MapRegion(p("/area/station/security/detective"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/evidence"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/execution"), SECURITY_COLOR),
+    MapRegion(p("/area/station/security/interrogation"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/main"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/permabrig"), SECURITY_COLOR, "Permabrig"),
+    MapRegion(p("/area/station/security/prison/cell_block/A"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/prisonlockers"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/processing"), SECURITY_COLOR),
+    MapRegion(p("/area/station/security/range"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/storage"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/warden"), SECURITY_COLOR, "Wrdn."),
 ]
@@ -148,15 +161,67 @@ MEDBAY_AREAS = [
     MapRegion(p("/area/station/medical/cryo"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/medbay"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/medbay2"), MEDBAY_COLOR),
+    MapRegion(p("/area/station/medical/medbay3"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/morgue"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/paramedic"), MEDBAY_COLOR),
+    MapRegion(p("/area/station/medical/psych"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/reception"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/sleeper"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/storage"), MEDBAY_COLOR),
+    MapRegion(p("/area/station/medical/storage/secondary"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/surgery"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/surgery/observation"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/surgery/primary"), MEDBAY_COLOR, "OR1"),
-    MapRegion(p("/area/station/medical/surgery/secondary"), MEDBAY_COLOR, "OR2"),    
+    MapRegion(p("/area/station/medical/surgery/secondary"), MEDBAY_COLOR, "OR2"),
+    MapRegion(p("/area/station/medical/cloning"), MEDBAY_COLOR),
+    MapRegion(p("/area/station/medical/virology"), MEDBAY_COLOR, "Virology"),
+    MapRegion(p("/area/station/command/office/cmo"), MEDBAY_COLOR, "CMO"),
+]
+
+SCIENCE_COLOR = "#b200ffff"
+SCIENCE_AREAS = [
+    MapRegion(p("/area/station/science/hallway"), SCIENCE_COLOR),
+    MapRegion(p("/area/station/science/rnd"), SCIENCE_COLOR, "R&D"),
+    MapRegion(p("/area/station/science/robotics/chargebay"), SCIENCE_COLOR),
+    MapRegion(p("/area/station/science/robotics"), SCIENCE_COLOR, "Robotics"),
+    MapRegion(p("/area/station/command/office/rd"), SCIENCE_COLOR, "RD"),
+    MapRegion(p("/area/station/science/genetics"), SCIENCE_COLOR, "Genetics"),
+    MapRegion(p("/area/station/science/server"), SCIENCE_COLOR),
+    MapRegion(p("/area/station/science/server/coldroom"), SCIENCE_COLOR),
+    MapRegion(p("/area/station/science/misc_lab"), SCIENCE_COLOR, "Chem"),
+    MapRegion(p("/area/station/science/explab/chamber"), SCIENCE_COLOR),
+    MapRegion(p("/area/station/science/explab"), SCIENCE_COLOR),
+    MapRegion(p("/area/station/science/storage"), SCIENCE_COLOR),
+    MapRegion(p("/area/station/science/test_chamber"), SCIENCE_COLOR),
+    MapRegion(p("/area/station/science/xenobiology"), SCIENCE_COLOR, "Xenobio"),
+    MapRegion(p("/area/station/science/toxins/launch"), SCIENCE_COLOR),
+    MapRegion(p("/area/station/science/toxins/test"), SCIENCE_COLOR, "Toxins\nTesting"),
+    MapRegion(p("/area/station/science/toxins/mixing"), SCIENCE_COLOR, "Toxins"),
+]
+
+AI_SAT_COLOR = "#00ffffff"
+AI_SAT_AREAS = [
+    MapRegion(p("/area/station/aisat/atmos"), AI_SAT_COLOR),
+    MapRegion(p("/area/station/aisat/hall"), AI_SAT_COLOR, "AI Sat."),
+    MapRegion(p("/area/station/aisat/service"), AI_SAT_COLOR),
+    MapRegion(p("/area/station/telecomms/chamber"), AI_SAT_COLOR),
+    MapRegion(p("/area/station/turret_protected/ai"), AI_SAT_COLOR),
+    MapRegion(p("/area/station/turret_protected/aisat/interior"), AI_SAT_COLOR),
+]
+
+SERVICE_COLOR = "#ffb787ff"
+BOTANY_COLOR = "#43db00ff"
+SERVICE_AREAS = [
+    MapRegion(p("/area/station/service/expedition"), SERVICE_COLOR, "Expl."),
+    MapRegion(p("/area/station/service/janitor"), SERVICE_COLOR, "Jani."),
+    MapRegion(p("/area/station/service/bar"), SERVICE_COLOR, "Bar"),
+    MapRegion(p("/area/station/service/kitchen"), SERVICE_COLOR, "Kitchen"),
+    MapRegion(p("/area/station/service/clown"), SERVICE_COLOR),
+    MapRegion(p("/area/station/service/mime"), SERVICE_COLOR),
+    MapRegion(p("/area/station/service/library"), SERVICE_COLOR, "Library"),
+    MapRegion(p("/area/station/service/chapel"), SERVICE_COLOR, "Chapel"),
+    MapRegion(p("/area/station/service/chapel/office"), SERVICE_COLOR),
+    MapRegion(p("/area/station/service/hydroponics"), BOTANY_COLOR, "Botany"),
 ]
 
 SOLARS_COLOR = "#005491ff"
@@ -171,6 +236,14 @@ SOLARS_AREAS = [
     MapRegion(p("/area/station/engineering/solar/starboard"), SOLARS_COLOR),
 ]
 
+ESCAPE_POD_COLOR = "#47687fff"
+ESCAPE_POD_AREAS = [
+    MapRegion(p("/area/shuttle/pod_1"), ESCAPE_POD_COLOR),
+    MapRegion(p("/area/shuttle/pod_2"), ESCAPE_POD_COLOR),
+    MapRegion(p("/area/shuttle/pod_3"), ESCAPE_POD_COLOR),
+    MapRegion(p("/area/shuttle/pod_4"), ESCAPE_POD_COLOR),
+]
+
 AREAS = (
     SUPPLY_AREAS
     + COMMAND_AREAS
@@ -182,7 +255,11 @@ AREAS = (
     + SECURITY_AREAS
     + ARRIVALS_AREAS
     + MEDBAY_AREAS
+    + SCIENCE_AREAS
+    + AI_SAT_AREAS
+    + SERVICE_AREAS
     + SOLARS_AREAS
+    + ESCAPE_POD_AREAS
 )
 
 
@@ -205,7 +282,7 @@ def render_map(dmm: DMM, output_path: Path, labels: str):
         polygons = [p[0]["coordinates"] for p in rasterio.features.shapes(myarray)]
         # for idx, polygon in enumerate(polygons):
         #     print(f"{region.area} polygon {idx} = {polygon}\n")
-        
+
         polygon_process_order = list()
         dupe_polygons = set()
 
@@ -213,23 +290,19 @@ def render_map(dmm: DMM, output_path: Path, labels: str):
         polygons.pop()
 
         for polygon in polygons:
-            tupled_polygon = tuple(x for xs in polygon for x in xs)
-            if tupled_polygon in dupe_polygons:
-                continue
+            first_coordinate = [int(x) for x in reversed(polygon[0][0])]
+            # print(f"area={region.area} polygon={polygon} first_coordinate={first_coordinate}")
+            tiledef = dmm.tiledef(*[int(x) for x in reversed(polygon[0][0])], 1)
 
             # If our first coordinate is space, this is an inner hole in a
-            # polygon that's just space, which we want to render last
-            first_coordinate = [int(x) for x in reversed(polygon[0][0])]
-            print(f"area={region.area} polygon={polygon} first_coordinate={first_coordinate}")
-            tiledef = dmm.tiledef(*[int(x) for x in reversed(polygon[0][0])], 1)
-            if tiledef.area_path().child_of('/area/space'):
-                polygon_process_order.append(tupled_polygon)
+            # polygon that's just space We want to render them last because
+            # transparent polygons will still replace filled polygons
+            if tiledef.area_path().child_of("/area/space"):
+                polygon_process_order.append(polygon)
             else:
-                polygon_process_order.insert(0, tupled_polygon)
-
+                polygon_process_order.insert(0, polygon)
 
         for idx, polygon in enumerate(polygon_process_order):
-            print(f"{region.area} polygon {idx} = {polygon}")
             tupled_polygon = tuple(x for xs in polygon for x in xs)
             if tupled_polygon in dupe_polygons:
                 continue
@@ -238,25 +311,23 @@ def render_map(dmm: DMM, output_path: Path, labels: str):
             if region.alt_colors and idx in region.alt_colors:
                 color = region.alt_colors[idx]
 
-            # If our first coordinate is space, this is an inner hole in a polygon that's just space
-            int_coords = list(reversed([int(x) for x in polygon[0]]))
-            tiledef = dmm.tiledef(*int_coords, 1)
-            if tiledef.area_path().child_of('/area/space'):
+            tiledef = dmm.tiledef(*[int(x) for x in reversed(polygon[0][0])], 1)
+            if tiledef.area_path().child_of("/area/space"):
                 color = "#00000000"
-            
-            flipped = [(y * 4, (255 - x) * 4) for (x, y) in polygon]
+
+            flipped = [(y * 4, (255 - x) * 4) for (x, y) in polygon[0]]
             draw.polygon(flipped, fill=color, outline="#00000000")
 
             msg = None
-            
+
             # Put the text label on the first polygon, this may be wrong
             # at some point but then we can configure it
-            if labels == 'rooms' and region.text and idx == 0:
+            if labels == "rooms" and region.text and idx == 0:
                 msg = region.text
-            elif labels == 'polygons':
+            elif labels == "polygons":
                 msg = str(idx)
 
-            if not labels:
+            if not labels or not msg:
                 continue
             lir = largestinteriorrectangle.lir(np.array([flipped], np.int32))
             x, y, width, height = lir
@@ -281,7 +352,9 @@ def render_map(dmm: DMM, output_path: Path, labels: str):
 
 @click.command()
 @click.option("--dmm_file", required=True)
-@click.option("--labels", type=click.Choice(['rooms', 'polygons', 'none']), default=None)
+@click.option(
+    "--labels", type=click.Choice(["rooms", "polygons", "none"]), default=None
+)
 def main(dmm_file, labels):
     dmm_path = Path(dmm_file)
     dmm = DMM.from_file(dmm_path)
