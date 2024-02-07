@@ -17,8 +17,13 @@ class MapRegion:
     area: p
     color: str
     text: Optional[str] = ""
-    alt_colors: Optional[dict[int, str]] = None
+    # alt_colors: Optional[dict[int, str]] = None
+    map_color_overrides: Optional[dict[str, str]] = None
 
+
+# The lists of areas are not necessarily in alphabetical order. They may be
+# arranged in certain ways because of inner polygon holes having to be drawn in
+# a specific order because of specific map layouts.
 
 SUPPLY_COLOR = "#ff6a00ff"
 SUPPLY_AREAS = [
@@ -60,6 +65,11 @@ HALLWAY_AREAS = [
     MapRegion(p("/area/station/hallway/primary/starboard/east"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/starboard/west"), HALLWAY_COLOR),
     MapRegion(p("/area/station/security/lobby"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/primary/central"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/secondary/bridge"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/primary/starboard"), HALLWAY_COLOR),
+    # Mostly a hallway on metastation
+    MapRegion(p("/area/station/supply/lobby"), HALLWAY_COLOR),
 ]
 
 ENGINEERING_COLOR = "#ffd800ff"
@@ -77,6 +87,8 @@ ENGINEERING_AREAS = [
     MapRegion(p("/area/station/maintenance/assembly_line"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/maintenance/electrical"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/public/construction"), ENGINEERING_COLOR),
+    MapRegion(p("/area/station/engineering/ai_transit_tube"), ENGINEERING_COLOR),
+    MapRegion(p("/area/station/engineering/engine/supermatter"), ENGINEERING_COLOR),
 ]
 
 ATMOS_COLOR = "#00ff90ff"
@@ -103,10 +115,20 @@ MAINTS_AREAS = [
     MapRegion(p("/area/station/maintenance/fsmaint"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/port"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/storage"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/maintcentral"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/starboard"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/starboard2"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/medmaint"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/xenobio_north"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/xenobio_south"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/fore2"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/spacehut"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/engimaint"), MAINTS_COLOR),
 ]
 
 PUBLIC_COLOR = "#bfffffff"
 PUBLIC_AREAS = [
+    MapRegion(p("/area/station/public/fitness"), PUBLIC_COLOR),    
     MapRegion(p("/area/holodeck/alphadeck"), PUBLIC_COLOR),
     MapRegion(p("/area/station/hallway/secondary/garden"), PUBLIC_COLOR, "Grdn."),
     MapRegion(p("/area/station/public/arcade"), PUBLIC_COLOR),
@@ -121,6 +143,9 @@ PUBLIC_AREAS = [
     MapRegion(p("/area/station/public/toilet/unisex"), PUBLIC_COLOR),
     MapRegion(p("/area/station/public/vacant_office"), PUBLIC_COLOR),
     MapRegion(p("/area/station/service/barber"), PUBLIC_COLOR),
+    MapRegion(p("/area/station/science/robotics/showroom"), PUBLIC_COLOR),
+    MapRegion(p("/area/station/service/cafeteria"), PUBLIC_COLOR),
+    
 ]
 
 SECURITY_COLOR = "#e20000ff"
@@ -132,6 +157,7 @@ SECURITY_AREAS = [
     MapRegion(p("/area/station/security/armory/secure"), SECURITY_COLOR, "Armory"),
     MapRegion(p("/area/station/security/brig"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/checkpoint/secondary"), SECURITY_COLOR, "Chk."),
+    MapRegion(p("/area/station/security/armory"), SECURITY_COLOR),        
     MapRegion(p("/area/station/security/detective"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/evidence"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/execution"), SECURITY_COLOR),
@@ -144,6 +170,7 @@ SECURITY_AREAS = [
     MapRegion(p("/area/station/security/range"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/storage"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/warden"), SECURITY_COLOR, "Wrdn."),
+    
 ]
 
 ARRIVALS_COLOR = "#b6ff00ff"
@@ -155,7 +182,13 @@ ARRIVALS_AREAS = [
 
 MEDBAY_COLOR = "#6cadd2ff"
 MEDBAY_AREAS = [
-    MapRegion(p("/area/station/maintenance/aft2"), MEDBAY_COLOR),
+    MapRegion(
+        p("/area/station/maintenance/aft2"),
+        MEDBAY_COLOR,
+        map_color_overrides={
+            "metastation": MAINTS_COLOR,
+        },
+    ),
     MapRegion(p("/area/station/medical/chemistry"), MEDBAY_COLOR, "Chem"),
     MapRegion(p("/area/station/medical/coldroom"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/cryo"), MEDBAY_COLOR),
@@ -176,6 +209,8 @@ MEDBAY_AREAS = [
     MapRegion(p("/area/station/medical/cloning"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/virology"), MEDBAY_COLOR, "Virology"),
     MapRegion(p("/area/station/command/office/cmo"), MEDBAY_COLOR, "CMO"),
+    MapRegion(p("/area/station/medical/exam_room"), MEDBAY_COLOR),
+    MapRegion(p("/area/station/medical/break_room"), MEDBAY_COLOR),
 ]
 
 SCIENCE_COLOR = "#b200ffff"
@@ -197,16 +232,20 @@ SCIENCE_AREAS = [
     MapRegion(p("/area/station/science/toxins/launch"), SCIENCE_COLOR),
     MapRegion(p("/area/station/science/toxins/test"), SCIENCE_COLOR, "Toxins\nTesting"),
     MapRegion(p("/area/station/science/toxins/mixing"), SCIENCE_COLOR, "Toxins"),
+    MapRegion(p("/area/station/science/research"), SCIENCE_COLOR),
+    MapRegion(p("/area/station/science/break_room"), SCIENCE_COLOR),
 ]
 
 AI_SAT_COLOR = "#00ffffff"
 AI_SAT_AREAS = [
+    MapRegion(p("/area/station/aisat"), AI_SAT_COLOR),
     MapRegion(p("/area/station/aisat/atmos"), AI_SAT_COLOR),
     MapRegion(p("/area/station/aisat/hall"), AI_SAT_COLOR, "AI Sat."),
     MapRegion(p("/area/station/aisat/service"), AI_SAT_COLOR),
     MapRegion(p("/area/station/telecomms/chamber"), AI_SAT_COLOR),
     MapRegion(p("/area/station/turret_protected/ai"), AI_SAT_COLOR),
     MapRegion(p("/area/station/turret_protected/aisat/interior"), AI_SAT_COLOR),
+    MapRegion(p("/area/station/telecomms/computer"), AI_SAT_COLOR),
 ]
 
 SERVICE_COLOR = "#ffb787ff"
@@ -244,10 +283,11 @@ ESCAPE_POD_AREAS = [
     MapRegion(p("/area/shuttle/pod_4"), ESCAPE_POD_COLOR),
 ]
 
+
 AREAS = (
-    SUPPLY_AREAS
+    HALLWAY_AREAS
+    + SUPPLY_AREAS
     + COMMAND_AREAS
-    + HALLWAY_AREAS
     + ENGINEERING_AREAS
     + ATMOS_AREAS
     + MAINTS_AREAS
@@ -262,10 +302,15 @@ AREAS = (
     + ESCAPE_POD_AREAS
 )
 
+ZOOM_LEVEL = 4.2
 
-def render_map(dmm: DMM, output_path: Path, labels: str):
+
+def render_map(dmm: DMM, output_path: Path, labels: str, dmm_filename: str):
     fnt = ImageFont.truetype("Minimal5x7.ttf", 16)
-    image = Image.new(size=(1024, 1024), mode="RGBA")
+    image = Image.new(
+        size=(int(dmm.extents[0] * ZOOM_LEVEL), int(dmm.extents[1] * ZOOM_LEVEL)),
+        mode="RGBA",
+    )
     draw = ImageDraw.Draw(image)
     draw.fontmode = "1"
     for region in AREAS:
@@ -308,14 +353,31 @@ def render_map(dmm: DMM, output_path: Path, labels: str):
                 continue
             dupe_polygons.add(tupled_polygon)
             color = region.color
-            if region.alt_colors and idx in region.alt_colors:
-                color = region.alt_colors[idx]
+            # if region.alt_colors and idx in region.alt_colors:
+            #     color = region.alt_colors[idx]
 
             tiledef = dmm.tiledef(*[int(x) for x in reversed(polygon[0][0])], 1)
             if tiledef.area_path().child_of("/area/space"):
                 color = "#00000000"
+            elif tiledef.area_path() != region.area:
+                # We can't just skip polygons whose first coordinates don't
+                # contain the same area because we might be looking at the
+                # outside of a polygon which has an inner hole that isn't the
+                # same area, and this won't get matched here.
+                #
+                # In general these areas are hallways that form loops, which is
+                # why hallways are drawn first.
+                color = "#00000000"
+            elif (
+                region.map_color_overrides
+                and dmm_filename.lower() in region.map_color_overrides
+            ):
+                color = region.map_color_overrides[dmm_filename.lower()]
 
-            flipped = [(y * 4, (255 - x) * 4) for (x, y) in polygon[0]]
+            flipped = [
+                (int(y * ZOOM_LEVEL), int((255 - x) * ZOOM_LEVEL))
+                for (x, y) in polygon[0]
+            ]
             draw.polygon(flipped, fill=color, outline="#00000000")
 
             msg = None
@@ -325,7 +387,8 @@ def render_map(dmm: DMM, output_path: Path, labels: str):
             if labels == "rooms" and region.text and idx == 0:
                 msg = region.text
             elif labels == "polygons":
-                msg = str(idx)
+                path_leaf = str(region.area).split("/")[-1]
+                msg = f"{path_leaf}{idx}"
 
             if not labels or not msg:
                 continue
@@ -358,7 +421,7 @@ def render_map(dmm: DMM, output_path: Path, labels: str):
 def main(dmm_file, labels):
     dmm_path = Path(dmm_file)
     dmm = DMM.from_file(dmm_path)
-    render_map(dmm, Path(f"./{dmm_path.stem}.png"), labels)
+    render_map(dmm, Path(f"./{dmm_path.stem}.png"), labels, dmm_path.stem)
 
 
 if __name__ == "__main__":
