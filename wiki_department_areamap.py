@@ -194,6 +194,7 @@ PUBLIC_AREAS = [
     MapRegion(p("/area/station/public/locker"), PUBLIC_COLOR, "Lockers"),
     MapRegion(p("/area/station/public/mrchangs"), PUBLIC_COLOR),
     MapRegion(p("/area/station/public/sleep"), PUBLIC_COLOR, "Cryo"),
+    MapRegion(p("/area/station/public/sleep/secondary"), PUBLIC_COLOR, "Cryo"),
     MapRegion(p("/area/station/public/storage/emergency/port"), PUBLIC_COLOR, "Tools"),
     MapRegion(p("/area/station/public/storage/tools"), PUBLIC_COLOR, "Tools"),
     MapRegion(p("/area/station/public/storage/tools/auxiliary"), PUBLIC_COLOR),
