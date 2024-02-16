@@ -38,7 +38,7 @@ SERVICE_COLOR = "#ffb787ff"
 SOLARS_COLOR = "#005491ff"
 SUPPLY_COLOR = "#ff6a00ff"
 DISPOSALS_COLOR = "#dbaf6dff"
-QUANTUMPAD_COLOR = "#dbaf6dff" # same as above at the moment
+QUANTUMPAD_COLOR = "#dbaf6dff"  # same as above at the moment
 ASTEROID_COLOR = "#a09078ff"
 
 # python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/cerestation/cerestation.dmm --labels polygons
@@ -56,7 +56,7 @@ ASTEROID_AREAS = [
     MapRegion(p("/area/mine/unexplored/cere/orbiting"), ASTEROID_COLOR),
     MapRegion(p("/area/station/service/clown/secret"), ASTEROID_COLOR),
     MapRegion(p("/area/mine/unexplored/cere/engineering"), ASTEROID_COLOR),
-    MapRegion(p("/area/mine/unexplored/cere/medical"), ASTEROID_COLOR),    
+    MapRegion(p("/area/mine/unexplored/cere/medical"), ASTEROID_COLOR),
 ]
 
 SUPPLY_AREAS = [
@@ -115,15 +115,15 @@ HALLWAY_AREAS = [
     MapRegion(p("/area/station/hallway/primary/aft/east"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/starboard/south"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/spacebridge/servsci"), HALLWAY_COLOR),
-    MapRegion(p("/area/station/hallway/spacebridge/serveng"), HALLWAY_COLOR),    
-    MapRegion(p("/area/station/hallway/spacebridge/sercom"), HALLWAY_COLOR),    
-    MapRegion(p("/area/station/hallway/spacebridge/medcargo"), HALLWAY_COLOR),    
-    MapRegion(p("/area/station/hallway/spacebridge/dockmed"), HALLWAY_COLOR),    
-    MapRegion(p("/area/station/hallway/spacebridge/comeng"), HALLWAY_COLOR),    
-    MapRegion(p("/area/station/hallway/spacebridge/scidock"), HALLWAY_COLOR),     
-    MapRegion(p("/area/station/hallway/spacebridge/engmed"), HALLWAY_COLOR),    
-    MapRegion(p("/area/station/hallway/spacebridge/cargocom"), HALLWAY_COLOR),    
-    MapRegion(p("/area/station/hallway/primary/starboard/north"), HALLWAY_COLOR),    
+    MapRegion(p("/area/station/hallway/spacebridge/serveng"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/spacebridge/sercom"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/spacebridge/medcargo"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/spacebridge/dockmed"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/spacebridge/comeng"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/spacebridge/scidock"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/spacebridge/engmed"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/spacebridge/cargocom"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/primary/starboard/north"), HALLWAY_COLOR),
 ]
 
 ENGINEERING_AREAS = [
@@ -143,7 +143,7 @@ ENGINEERING_AREAS = [
     MapRegion(p("/area/station/engineering/ai_transit_tube"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/engineering/engine/supermatter"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/maintenance/electrical_shop"), ENGINEERING_COLOR),
-    MapRegion(p("/area/station/engineering/break_room/secondary"), ENGINEERING_COLOR),    
+    MapRegion(p("/area/station/engineering/break_room/secondary"), ENGINEERING_COLOR),
 ]
 
 ATMOS_AREAS = [
@@ -182,7 +182,7 @@ MAINTS_AREAS = [
     MapRegion(p("/area/station/maintenance/gambling_den"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/library"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/theatre"), MAINTS_COLOR),
-    MapRegion(p("/area/station/maintenance/disposal/north"), MAINTS_COLOR),    
+    MapRegion(p("/area/station/maintenance/disposal/north"), MAINTS_COLOR),
 ]
 
 PUBLIC_AREAS = [
@@ -243,7 +243,6 @@ ARRIVALS_AREAS = [
     MapRegion(p("/area/station/hallway/entry/north"), ARRIVALS_COLOR),
     MapRegion(p("/area/station/hallway/secondary/entry/north"), ARRIVALS_COLOR),
     MapRegion(p("/area/station/hallway/secondary/entry/south"), ARRIVALS_COLOR),
-    
 ]
 
 MEDBAY_AREAS = [
@@ -308,12 +307,13 @@ AI_SAT_AREAS = [
     MapRegion(p("/area/station/aisat/service"), AI_SAT_COLOR),
     MapRegion(p("/area/station/telecomms/chamber"), AI_SAT_COLOR),
     MapRegion(p("/area/station/turret_protected/ai"), AI_SAT_COLOR),
-    MapRegion(p("/area/station/turret_protected/aisat"), AI_SAT_COLOR),    
+    MapRegion(p("/area/station/turret_protected/aisat"), AI_SAT_COLOR),
     MapRegion(p("/area/station/turret_protected/aisat/interior"), AI_SAT_COLOR),
     MapRegion(p("/area/station/telecomms/computer"), AI_SAT_COLOR),
     MapRegion(p("/area/station/engineering/ai_transit_tube"), AI_SAT_COLOR),
-    MapRegion(p("/area/station/turret_protected/aisat/interior/secondary"), AI_SAT_COLOR),
-    
+    MapRegion(
+        p("/area/station/turret_protected/aisat/interior/secondary"), AI_SAT_COLOR
+    ),
 ]
 
 SERVICE_AREAS = [
@@ -329,7 +329,7 @@ SERVICE_AREAS = [
     MapRegion(p("/area/station/service/hydroponics"), BOTANY_COLOR, "Botany"),
     MapRegion(p("/area/station/public/pet_store"), SERVICE_COLOR),
     MapRegion(p("/area/station/public/storage/art"), SERVICE_COLOR),
-    MapRegion(p("/area/station/service/theatre"), SERVICE_COLOR),        
+    MapRegion(p("/area/station/service/theatre"), SERVICE_COLOR),
 ]
 
 SOLARS_AREAS = [
@@ -362,17 +362,20 @@ MISC_AREAS = [
     MapRegion(p("/area/station/maintenance/disposal/southwest"), DISPOSALS_COLOR),
     MapRegion(p("/area/station/maintenance/disposal/external/east"), DISPOSALS_COLOR),
     MapRegion(p("/area/station/maintenance/disposal/external/north"), DISPOSALS_COLOR),
-    MapRegion(p("/area/station/maintenance/disposal/external/southeast"), DISPOSALS_COLOR),
-    MapRegion(p("/area/station/maintenance/disposal/external/southwest"), DISPOSALS_COLOR),
-    MapRegion(p("/area/station/maintenance/disposal/westalt"), DISPOSALS_COLOR),    
+    MapRegion(
+        p("/area/station/maintenance/disposal/external/southeast"), DISPOSALS_COLOR
+    ),
+    MapRegion(
+        p("/area/station/maintenance/disposal/external/southwest"), DISPOSALS_COLOR
+    ),
+    MapRegion(p("/area/station/maintenance/disposal/westalt"), DISPOSALS_COLOR),
 ]
 
 QUANTUMPAD_AREAS = [
-    MapRegion(p("/area/station/public/quantum/cargo"), QUANTUMPAD_COLOR),    
-    MapRegion(p("/area/station/public/quantum/docking"), QUANTUMPAD_COLOR),    
-    MapRegion(p("/area/station/public/quantum/science"), QUANTUMPAD_COLOR),    
-    MapRegion(p("/area/station/public/quantum/security"), QUANTUMPAD_COLOR),    
-    
+    MapRegion(p("/area/station/public/quantum/cargo"), QUANTUMPAD_COLOR),
+    MapRegion(p("/area/station/public/quantum/docking"), QUANTUMPAD_COLOR),
+    MapRegion(p("/area/station/public/quantum/science"), QUANTUMPAD_COLOR),
+    MapRegion(p("/area/station/public/quantum/security"), QUANTUMPAD_COLOR),
 ]
 
 AREAS = (
@@ -397,6 +400,7 @@ AREAS = (
 )
 
 ZOOM_LEVEL = 4.2
+
 
 def render_map(dmm: DMM, output_path: Path, labels: str, dmm_filename: str):
     fnt = ImageFont.truetype("Minimal5x7.ttf", 16)
@@ -454,7 +458,9 @@ def render_map(dmm: DMM, output_path: Path, labels: str, dmm_filename: str):
             #     color = region.alt_colors[idx]
 
             tiledef = dmm.tiledef(*[int(x) for x in reversed(polygon[0][0])], 1)
-            if tiledef.area_path().child_of("/area/space") and not tiledef.area_path().child_of("/area/space/nearstation/disposals"):
+            if tiledef.area_path().child_of(
+                "/area/space"
+            ) and not tiledef.area_path().child_of("/area/space/nearstation/disposals"):
                 color = "#00000000"
             elif tiledef.area_path() != region.area:
                 # We can't just skip polygons whose first coordinates don't
