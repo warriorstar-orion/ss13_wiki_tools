@@ -42,6 +42,7 @@ QUANTUMPAD_COLOR = "#dbaf6dff"  # same as above at the moment
 ASTEROID_COLOR = "#a09078ff"
 
 # python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/cerestation/cerestation.dmm --labels polygons
+# python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/MetaStation/MetaStation.dmm
 
 # The lists of areas are not necessarily in alphabetical order. They may be
 # arranged in certain ways because of inner polygon holes having to be drawn in
@@ -94,6 +95,7 @@ HALLWAY_AREAS = [
     MapRegion(p("/area/station/hallway/primary/central/se"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/central/sw"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/central/west"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/primary/central/east"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/fore"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/port"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/starboard/east"), HALLWAY_COLOR),
@@ -107,9 +109,13 @@ HALLWAY_AREAS = [
     MapRegion(p("/area/station/supply/lobby"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/port/north"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/port/east"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/primary/port/west"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/port/south"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/primary/aft/north"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/primary/aft/south"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/aft/west"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/fore"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/primary/fore/north"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/fore/east"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/fore/west"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/primary/aft/east"), HALLWAY_COLOR),
@@ -243,6 +249,8 @@ ARRIVALS_AREAS = [
     MapRegion(p("/area/station/hallway/entry/north"), ARRIVALS_COLOR),
     MapRegion(p("/area/station/hallway/secondary/entry/north"), ARRIVALS_COLOR),
     MapRegion(p("/area/station/hallway/secondary/entry/south"), ARRIVALS_COLOR),
+    MapRegion(p("/area/station/hallway/secondary/entry/lounge"), ARRIVALS_COLOR),
+    MapRegion(p("/area/station/hallway/secondary/entry/east"), ARRIVALS_COLOR),
 ]
 
 MEDBAY_AREAS = [
@@ -250,7 +258,7 @@ MEDBAY_AREAS = [
         p("/area/station/maintenance/aft2"),
         MEDBAY_COLOR,
         map_color_overrides={
-            "metastation": MAINTS_COLOR,
+            "MetaStation": MAINTS_COLOR,
         },
     ),
     MapRegion(p("/area/station/medical/chemistry"), MEDBAY_COLOR, "Chem"),
