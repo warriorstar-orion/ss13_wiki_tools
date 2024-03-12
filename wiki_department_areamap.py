@@ -41,8 +41,10 @@ DISPOSALS_COLOR = "#dbaf6dff"
 QUANTUMPAD_COLOR = "#dbaf6dff"  # same as above at the moment
 ASTEROID_COLOR = "#a09078ff"
 
-# python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/cerestation/cerestation.dmm --labels polygons
+# python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/cerestation/cerestation.dmm
 # python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/MetaStation/MetaStation.dmm
+# python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/delta/delta.dmm
+# python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/cyberiad/cyberiad.dmm
 
 # The lists of areas are not necessarily in alphabetical order. They may be
 # arranged in certain ways because of inner polygon holes having to be drawn in
@@ -239,6 +241,7 @@ SECURITY_AREAS = [
     MapRegion(p("/area/station/security/permasolitary"), SECURITY_COLOR),
     MapRegion(p("/area/station/command/customs"), SECURITY_COLOR),
     MapRegion(p("/area/station/security/prisonershuttle"), SECURITY_COLOR),
+    MapRegion(p("/area/station/legal/courtroom/gallery"), SECURITY_COLOR),
 ]
 
 ARRIVALS_AREAS = [
@@ -251,6 +254,7 @@ ARRIVALS_AREAS = [
     MapRegion(p("/area/station/hallway/secondary/entry/south"), ARRIVALS_COLOR),
     MapRegion(p("/area/station/hallway/secondary/entry/lounge"), ARRIVALS_COLOR),
     MapRegion(p("/area/station/hallway/secondary/entry/east"), ARRIVALS_COLOR),
+    MapRegion(p("/area/station/hallway/secondary/entry/west"), ARRIVALS_COLOR),
 ]
 
 MEDBAY_AREAS = [
@@ -284,6 +288,8 @@ MEDBAY_AREAS = [
     MapRegion(p("/area/station/medical/exam_room"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/break_room"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/patients_rooms"), MEDBAY_COLOR),
+    MapRegion(p("/area/station/medical/patients_rooms_secondary"), MEDBAY_COLOR),
+    MapRegion(p("/area/station/medical/patients_rooms1"), MEDBAY_COLOR),
 ]
 
 SCIENCE_AREAS = [
