@@ -206,10 +206,10 @@ def main(output_path, round_id):
     engine = create_engine(connection_string)
     with Session(engine) as session:
         round = session.get(Round, int(round_id))
-        if not round.has_feedback_stat("ruin_placement"):
+        if not round.has_feedback("ruin_placement"):
             raise RuntimeError(f"no ruin placement found for round ID {round.id}")
 
-        ruin_placements = round.get_feedback_stat("ruin_placement")
+        ruin_placements = round.feedback("ruin_placement")
         output_path = Path(output_path) / str(round.id)
         output_path.mkdir(parents=True, exist_ok=True)
         render_z_levels(ruin_placements, output_path)

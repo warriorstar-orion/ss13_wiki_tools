@@ -69,6 +69,7 @@ SUPPLY_AREAS = [
     MapRegion(p("/area/station/supply/qm"), SUPPLY_COLOR, "QM"),
     MapRegion(p("/area/station/supply/storage"), SUPPLY_COLOR, "Cargo\nBay"),
     MapRegion(p("/area/station/supply/sorting"), SUPPLY_COLOR),
+    MapRegion(p("/area/station/supply/expedition"), SUPPLY_COLOR),
 ]
 
 
@@ -174,6 +175,7 @@ MAINTS_AREAS = [
     MapRegion(p("/area/station/maintenance/fpmaint"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/fpmaint2"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/fsmaint"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/fsmaint2"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/port"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/port2"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/storage"), MAINTS_COLOR),
@@ -213,6 +215,7 @@ PUBLIC_AREAS = [
     MapRegion(p("/area/station/service/barber"), PUBLIC_COLOR),
     MapRegion(p("/area/station/science/robotics/showroom"), PUBLIC_COLOR),
     MapRegion(p("/area/station/service/cafeteria"), PUBLIC_COLOR),
+    MapRegion(p("/area/station/public/storage/office"), PUBLIC_COLOR),
 ]
 
 SECURITY_AREAS = [
@@ -293,6 +296,7 @@ MEDBAY_AREAS = [
 ]
 
 SCIENCE_AREAS = [
+    MapRegion(p("/area/station/science/lobby"), SCIENCE_COLOR),
     MapRegion(p("/area/station/science/hallway"), SCIENCE_COLOR),
     MapRegion(p("/area/station/science/rnd"), SCIENCE_COLOR, "R&D"),
     MapRegion(p("/area/station/science/robotics/chargebay"), SCIENCE_COLOR),
@@ -388,8 +392,10 @@ MISC_AREAS = [
 QUANTUMPAD_AREAS = [
     MapRegion(p("/area/station/public/quantum/cargo"), QUANTUMPAD_COLOR),
     MapRegion(p("/area/station/public/quantum/docking"), QUANTUMPAD_COLOR),
+    MapRegion(p("/area/station/public/quantum/medbay"), QUANTUMPAD_COLOR),
     MapRegion(p("/area/station/public/quantum/science"), QUANTUMPAD_COLOR),
     MapRegion(p("/area/station/public/quantum/security"), QUANTUMPAD_COLOR),
+    MapRegion(p("/area/station/public/quantum/service"), QUANTUMPAD_COLOR),
 ]
 
 AREAS = (
