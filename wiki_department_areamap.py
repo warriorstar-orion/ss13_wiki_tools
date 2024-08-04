@@ -41,10 +41,10 @@ DISPOSALS_COLOR = "#dbaf6dff"
 QUANTUMPAD_COLOR = "#dbaf6dff"  # same as above at the moment
 ASTEROID_COLOR = "#a09078ff"
 
-# python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/cerestation/cerestation.dmm
-# python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/MetaStation/MetaStation.dmm
-# python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/delta/delta.dmm
-# python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/cyberiad/cyberiad.dmm
+# python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/stations/cerestation.dmm
+# python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/stations/metastation.dmm
+# python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/stations/deltastation.dmm
+# python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/stations/boxstation.dmm
 
 # The lists of areas are not necessarily in alphabetical order. They may be
 # arranged in certain ways because of inner polygon holes having to be drawn in
@@ -70,6 +70,8 @@ SUPPLY_AREAS = [
     MapRegion(p("/area/station/supply/storage"), SUPPLY_COLOR, "Cargo\nBay"),
     MapRegion(p("/area/station/supply/sorting"), SUPPLY_COLOR),
     MapRegion(p("/area/station/supply/expedition"), SUPPLY_COLOR),
+    MapRegion(p("/area/station/supply/warehouse"), SUPPLY_COLOR),
+    MapRegion(p("/area/station/supply/break_room"), SUPPLY_COLOR),
 ]
 
 
@@ -212,6 +214,7 @@ PUBLIC_AREAS = [
     MapRegion(p("/area/station/public/toilet/unisex"), PUBLIC_COLOR),
     MapRegion(p("/area/station/public/toilet"), PUBLIC_COLOR),
     MapRegion(p("/area/station/public/vacant_office"), PUBLIC_COLOR),
+    MapRegion(p("/area/station/public/storefront"), PUBLIC_COLOR),
     MapRegion(p("/area/station/service/barber"), PUBLIC_COLOR),
     MapRegion(p("/area/station/science/robotics/showroom"), PUBLIC_COLOR),
     MapRegion(p("/area/station/service/cafeteria"), PUBLIC_COLOR),
@@ -265,7 +268,7 @@ MEDBAY_AREAS = [
         p("/area/station/maintenance/aft2"),
         MEDBAY_COLOR,
         map_color_overrides={
-            "MetaStation": MAINTS_COLOR,
+            "metastation": MAINTS_COLOR,
         },
     ),
     MapRegion(p("/area/station/medical/chemistry"), MEDBAY_COLOR, "Chem"),
@@ -359,6 +362,7 @@ SOLARS_AREAS = [
     MapRegion(p("/area/station/engineering/solar/auxport"), SOLARS_COLOR),
     MapRegion(p("/area/station/engineering/solar/auxstarboard"), SOLARS_COLOR),
     MapRegion(p("/area/station/engineering/solar/starboard"), SOLARS_COLOR),
+    MapRegion(p("/area/station/engineering/solar/starboard/aft"), SOLARS_COLOR),
 ]
 
 ESCAPE_POD_AREAS = [
@@ -399,8 +403,7 @@ QUANTUMPAD_AREAS = [
 ]
 
 AREAS = (
-    ASTEROID_AREAS
-    + HALLWAY_AREAS
+    HALLWAY_AREAS
     + SUPPLY_AREAS
     + COMMAND_AREAS
     + ATMOS_AREAS
@@ -417,6 +420,7 @@ AREAS = (
     + ESCAPE_POD_AREAS
     + MISC_AREAS
     + QUANTUMPAD_AREAS
+    + ASTEROID_AREAS
 )
 
 ZOOM_LEVEL = 4.2
