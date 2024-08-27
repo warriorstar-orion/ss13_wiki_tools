@@ -40,7 +40,9 @@ SUPPLY_COLOR = "#ff6a00ff"
 DISPOSALS_COLOR = "#dbaf6dff"
 QUANTUMPAD_COLOR = "#dbaf6dff"  # same as above at the moment
 ASTEROID_COLOR = "#a09078ff"
+EMERALD_PLASMA_COLOR = "#bd5d9cff"
 
+# python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/stations/emeraldstation.dmm
 # python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/stations/cerestation.dmm
 # python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/stations/metastation.dmm
 # python wiki_department_areamap.py --dmm_file D:/ExternalRepos/third_party/Paradise/_maps/map_files/stations/deltastation.dmm
@@ -60,6 +62,7 @@ ASTEROID_AREAS = [
     MapRegion(p("/area/station/service/clown/secret"), ASTEROID_COLOR),
     MapRegion(p("/area/mine/unexplored/cere/engineering"), ASTEROID_COLOR),
     MapRegion(p("/area/mine/unexplored/cere/medical"), ASTEROID_COLOR),
+    MapRegion(p("/area/station/engineering/atmos/asteroid"), ASTEROID_COLOR),
 ]
 
 SUPPLY_AREAS = [
@@ -134,6 +137,9 @@ HALLWAY_AREAS = [
     MapRegion(p("/area/station/hallway/spacebridge/scidock"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/spacebridge/engmed"), HALLWAY_COLOR),
     MapRegion(p("/area/station/hallway/spacebridge/cargocom"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/spacebridge/security/south"), HALLWAY_COLOR),
+    MapRegion(p("/area/station/hallway/spacebridge/security/west"), HALLWAY_COLOR),
+    
     MapRegion(p("/area/station/hallway/primary/starboard/north"), HALLWAY_COLOR),
 ]
 
@@ -155,6 +161,9 @@ ENGINEERING_AREAS = [
     MapRegion(p("/area/station/engineering/engine/supermatter"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/maintenance/electrical_shop"), ENGINEERING_COLOR),
     MapRegion(p("/area/station/engineering/break_room/secondary"), ENGINEERING_COLOR),
+    MapRegion(p("/area/station/engineering/atmos/asteroid_filtering"), ENGINEERING_COLOR),
+    MapRegion(p("/area/station/engineering/atmos/asteroid_maint"), ENGINEERING_COLOR),
+    MapRegion(p("/area/station/engineering/atmos/storage"), ENGINEERING_COLOR),
 ]
 
 ATMOS_AREAS = [
@@ -195,11 +204,18 @@ MAINTS_AREAS = [
     MapRegion(p("/area/station/maintenance/library"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/theatre"), MAINTS_COLOR),
     MapRegion(p("/area/station/maintenance/disposal/north"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/dorms/port"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/dorms/aft"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/dorms/fore"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/dorms/starboard"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/security"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/security/aft_port"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/security/aft_starboard"), MAINTS_COLOR),
+    MapRegion(p("/area/station/maintenance/security/fore"), MAINTS_COLOR),
 ]
 
 PUBLIC_AREAS = [
     MapRegion(p("/area/station/public/fitness"), PUBLIC_COLOR),
-    MapRegion(p("/area/holodeck/alphadeck"), PUBLIC_COLOR),
     MapRegion(p("/area/station/hallway/secondary/garden"), PUBLIC_COLOR, "Grdn."),
     MapRegion(p("/area/station/public/arcade"), PUBLIC_COLOR),
     MapRegion(p("/area/station/public/dorms"), PUBLIC_COLOR, "Dorms"),
@@ -219,6 +235,10 @@ PUBLIC_AREAS = [
     MapRegion(p("/area/station/science/robotics/showroom"), PUBLIC_COLOR),
     MapRegion(p("/area/station/service/cafeteria"), PUBLIC_COLOR),
     MapRegion(p("/area/station/public/storage/office"), PUBLIC_COLOR),
+    MapRegion(p("/area/holodeck/alphadeck"), PUBLIC_COLOR),
+    MapRegion(p("/area/station/public/shops"), PUBLIC_COLOR),
+    MapRegion(p("/area/station/public/park"), PUBLIC_COLOR),
+    MapRegion(p("/area/station/maintenance/abandoned_office"), PUBLIC_COLOR),
 ]
 
 SECURITY_AREAS = [
@@ -290,12 +310,14 @@ MEDBAY_AREAS = [
     MapRegion(p("/area/station/medical/surgery/secondary"), MEDBAY_COLOR, "OR2"),
     MapRegion(p("/area/station/medical/cloning"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/virology"), MEDBAY_COLOR, "Virology"),
+    MapRegion(p("/area/station/medical/virology/lab"), MEDBAY_COLOR, "Virology"),
     MapRegion(p("/area/station/command/office/cmo"), MEDBAY_COLOR, "CMO"),
     MapRegion(p("/area/station/medical/exam_room"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/break_room"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/patients_rooms"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/patients_rooms_secondary"), MEDBAY_COLOR),
     MapRegion(p("/area/station/medical/patients_rooms1"), MEDBAY_COLOR),
+    MapRegion(p("/area/station/public/storage/emergency"), MEDBAY_COLOR),
 ]
 
 SCIENCE_AREAS = [
@@ -332,9 +354,11 @@ AI_SAT_AREAS = [
     MapRegion(p("/area/station/turret_protected/aisat/interior"), AI_SAT_COLOR),
     MapRegion(p("/area/station/telecomms/computer"), AI_SAT_COLOR),
     MapRegion(p("/area/station/engineering/ai_transit_tube"), AI_SAT_COLOR),
+    MapRegion(p("/area/station/aisat/breakroom"), AI_SAT_COLOR),
     MapRegion(
         p("/area/station/turret_protected/aisat/interior/secondary"), AI_SAT_COLOR
     ),
+    
 ]
 
 SERVICE_AREAS = [
@@ -346,6 +370,7 @@ SERVICE_AREAS = [
     MapRegion(p("/area/station/service/mime"), SERVICE_COLOR),
     MapRegion(p("/area/station/service/library"), SERVICE_COLOR, "Library"),
     MapRegion(p("/area/station/service/chapel"), SERVICE_COLOR, "Chapel"),
+    MapRegion(p("/area/station/service/chapel/funeral"), SERVICE_COLOR, "Chapel"),
     MapRegion(p("/area/station/service/chapel/office"), SERVICE_COLOR),
     MapRegion(p("/area/station/service/hydroponics"), BOTANY_COLOR, "Botany"),
     MapRegion(p("/area/station/public/pet_store"), SERVICE_COLOR),
@@ -354,16 +379,25 @@ SERVICE_AREAS = [
 ]
 
 SOLARS_AREAS = [
-    MapRegion(p("/area/station/maintenance/portsolar"), SOLARS_COLOR),
-    MapRegion(p("/area/station/maintenance/starboardsolar"), SOLARS_COLOR),
-    MapRegion(p("/area/station/maintenance/auxsolarport"), SOLARS_COLOR),
-    MapRegion(p("/area/station/maintenance/auxsolarstarboard"), SOLARS_COLOR),
+    MapRegion(p("/area/station/maintenance/solar_maintenance"), SOLARS_COLOR),
+    MapRegion(p("/area/station/maintenance/solar_maintenance/aft"), SOLARS_COLOR),
+    MapRegion(p("/area/station/maintenance/solar_maintenance/aft_port"), SOLARS_COLOR),
+    MapRegion(p("/area/station/maintenance/solar_maintenance/aft_starboard"), SOLARS_COLOR),
+    MapRegion(p("/area/station/maintenance/solar_maintenance/fore"), SOLARS_COLOR),
+    MapRegion(p("/area/station/maintenance/solar_maintenance/fore_port"), SOLARS_COLOR),
+    MapRegion(p("/area/station/maintenance/solar_maintenance/fore_starboard"), SOLARS_COLOR),
+    MapRegion(p("/area/station/maintenance/solar_maintenance/port"), SOLARS_COLOR),
+    MapRegion(p("/area/station/maintenance/solar_maintenance/starboard"), SOLARS_COLOR),
+    MapRegion(p("/area/station/engineering/solar"), SOLARS_COLOR),
+    MapRegion(p("/area/station/engineering/solar/aft"), SOLARS_COLOR),
+    MapRegion(p("/area/station/engineering/solar/aft_port"), SOLARS_COLOR),
+    MapRegion(p("/area/station/engineering/solar/aft_starboard"), SOLARS_COLOR),
+    MapRegion(p("/area/station/engineering/solar/fore"), SOLARS_COLOR),
+    MapRegion(p("/area/station/engineering/solar/fore_port"), SOLARS_COLOR),
+    MapRegion(p("/area/station/engineering/solar/fore_starboard"), SOLARS_COLOR),
     MapRegion(p("/area/station/engineering/solar/port"), SOLARS_COLOR),
-    MapRegion(p("/area/station/engineering/solar/auxport"), SOLARS_COLOR),
-    MapRegion(p("/area/station/engineering/solar/auxstarboard"), SOLARS_COLOR),
     MapRegion(p("/area/station/engineering/solar/starboard"), SOLARS_COLOR),
-    MapRegion(p("/area/station/engineering/solar/starboard/aft"), SOLARS_COLOR),
-]
+    ]
 
 ESCAPE_POD_AREAS = [
     MapRegion(p("/area/shuttle/pod_1"), ESCAPE_POD_COLOR),
@@ -391,6 +425,7 @@ MISC_AREAS = [
         p("/area/station/maintenance/disposal/external/southwest"), DISPOSALS_COLOR
     ),
     MapRegion(p("/area/station/maintenance/disposal/westalt"), DISPOSALS_COLOR),
+    MapRegion(p("/area/station/engineering/atmos/asteroid_core"), EMERALD_PLASMA_COLOR),
 ]
 
 QUANTUMPAD_AREAS = [
@@ -423,7 +458,7 @@ AREAS = (
     + ASTEROID_AREAS
 )
 
-ZOOM_LEVEL = 4.2
+ZOOM_LEVEL = 8
 
 
 def render_map(dmm: DMM, output_path: Path, labels: str, dmm_filename: str):
